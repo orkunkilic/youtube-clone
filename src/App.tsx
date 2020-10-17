@@ -45,8 +45,11 @@ const App = () => {
   return (
     <div className='App'>
       <Navbar />
-      <LeftBar />
-      <Container data={data} loading={loading} error={error} channelData={channelData} />
+      <div className="main grid md:grid-cols-8">
+        <LeftBar />
+        <Container data={data} loading={loading} error={error} channelData={channelData} />
+      </div>
+
     </div>
   )
 }
