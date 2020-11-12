@@ -26,15 +26,15 @@ const VideoCard: React.FC<Props> = ({ title, channelTitle, channelThumbnail, vie
 
     React.useEffect(() => {
         const first = duration.split('T')[1]
-        const end = first.includes('H') ? `${first.split('H')[0] + `:`}${first.includes('M') ? first.split('H')[1].split('M')[0] + `` : `00:`}${first.includes('S') && first.includes('M') ? first.split('H')[1].split('M')[1].split('S')[0] : ``}${first.includes('S') && !first.includes('M') ? first.split('H')[1].split('S')[0] : ``}` : first.split('M')[0] + ':' + (first.split('M')[1].split('S')[0].length === 1 ? '0' + first.split('M')[1].split('S')[0] : first.split('M')[1].split('S')[0])
-        setDuration(end)
+        // const end = first.includes('H') ? `${first.split('H')[0] + `:`}${first.includes('M') ? first.split('H')[1].split('M')[0] + `` : `00:`}${first.includes('S') && first.includes('M') ? first.split('H')[1].split('M')[1].split('S')[0] : ``}${first.includes('S') && !first.includes('M') ? first.split('H')[1].split('S')[0] : ``}` : first.split('M')[0] + ':' + (first.split('M')[1].split('S')[0].length === 1 ? '0' + first.split('M')[1].split('S')[0] : first.split('M')[1].split('S')[0])
+        setDuration('1')
         moment().locale('tr')
     }, [duration])
 
 
 
     return (
-        <div>
+        <div className="cursor-pointer">
             <div className='relative'>
                 <img src={thumbnail.url} alt="" className="w-full bg-opacity-0" />
                 <div className="absolute bottom-0 right-0 mb-1 mr-1 p-px bg-black bg-opacity-75 text-white text-xs font-bold rounded-sm">
